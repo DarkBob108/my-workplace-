@@ -1,0 +1,321 @@
+/* Reset / Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Light vs Dark theme toggling */
+body {
+  background-color: #111;
+  color: #ddd;
+  transition: background-color 0.3s, color 0.3s;
+}
+body.light-mode {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Forest background wrap */
+.background-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* behind everything */
+  overflow: hidden;
+}
+
+.forest-background {
+  background: url('assets/forest-bg.jpg') no-repeat center center/cover;
+  filter: brightness(0.5);
+  width: 100%;
+  height: 100%;
+}
+
+/* Fireflies container */
+.firefly-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Firefly animation */
+.firefly {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(#99ffcc, rgba(0,0,0,0));
+  border-radius: 50%;
+  animation: fly 10s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes fly {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-200px) translateX(100px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+/* Position randomization for fireflies (simple approach) */
+.firefly:nth-child(1) {
+  top: 50%;
+  left: 30%;
+  animation-delay: 0s;
+}
+.firefly:nth-child(2) {
+  top: 70%;
+  left: 60%;
+  animation-delay: 2s;
+}
+.firefly:nth-child(3) {
+  top: 40%;
+  left: 20%;
+  animation-delay: 4s;
+}
+.firefly:nth-child(4) {
+  top: 80%;
+  left: 80%;
+  animation-delay: 1s;
+}
+.firefly:nth-child(5) {
+  top: 20%;
+  left: 50%;
+  animation-delay: 3s;
+}
+.firefly:nth-child(6) {
+  top: 60%;
+  left: 10%;
+  animation-delay: 5s;
+}
+
+/* Header */
+header {
+  padding: 20px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+}
+header h1 {
+  font-weight: 600;
+  font-size: 2rem;
+  color: #8aff8a;
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.logout-btn {
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+  background: #444;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.logout-btn:hover {
+  background: #666;
+}
+
+/* Settings nav */
+.settings-nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  background: rgba(0,0,0,0.4);
+}
+.settings-item {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  color: #ddd;
+}
+.settings-item label {
+  margin-right: 8px;
+  font-size: 0.9rem;
+}
+
+/* Main layout */
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Left Column */
+.left-column, .middle-column, .right-column {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.timer-box {
+  margin-bottom: 20px;
+}
+.timer-box h2 {
+  margin-bottom: 10px;
+}
+#timerDisplay {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.timer-controls button {
+  margin-right: 5px;
+  padding: 5px 10px;
+}
+
+/* Middle Column */
+.task-input, .checklist-input {
+  display: flex;
+  margin-bottom: 10px;
+}
+.task-input input, .checklist-input input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  outline: none;
+  margin-right: 5px;
+  border-radius: 4px;
+}
+.task-input button, .checklist-input button {
+  background: #2f5;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.task-input button:hover, .checklist-input button:hover {
+  background: #4f7;
+}
+
+/* Task list styles */
+#taskList, #checklistContainer {
+  list-style: none;
+}
+#taskList li, #checklistContainer li {
+  background: rgba(0,0,0,0.2);
+  margin-bottom: 5px;
+  padding: 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.task-text, .checklist-text {
+  flex: 1;
+  margin-right: 10px;
+}
+.task-buttons button, .checklist-buttons button {
+  margin-left: 5px;
+  background: #444;
+  color: #fff;
+  border: none;
+  padding: 5px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.task-buttons button:hover, .checklist-buttons button:hover {
+  background: #666;
+}
+
+/* Right Column */
+.stats-box, .calendar-box, .notes-box {
+  margin-bottom: 20px;
+}
+.stats-box p {
+  margin: 5px 0;
+}
+.notes-box textarea {
+  width: 100%;
+  height: 100px;
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+  resize: vertical;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background: rgba(0,0,0,0.6);
+  color: #ddd;
+}
+footer a {
+  color: #8aff8a;
+}
+footer a:hover {
+  color: #aaffaa;
+}
+
+/* Login Modal */
+.login-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none; /* Hidden by default, shown if not logged in */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.login-modal-content {
+  background: #222;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+}
+.login-modal-content h2 {
+  margin-bottom: 10px;
+}
+.login-modal-content input {
+  width: 80%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Light mode overrides */
+body.light-mode header {
+  background: #fff;
+  color: #333;
+}
+body.light-mode .header-content h1 {
+  color: #007f00;
+}
+body.light-mode .logout-btn {
+  background: #ccc;
+  color: #333;
+}
+body.light-mode .settings-nav {
+  background: #eee;
+  color: #333;
+}
+body.light-mode .left-column, 
+body.light-mode .middle-column, 
+body.light-mode .right-column {
+  background: rgba(255,255,255,0.8);
+}
+body.light-mode footer {
+  background: #ddd;
+  color: #333;
+}

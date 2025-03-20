@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Work Place</title>
+  <!-- Fonts (example: Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== LOGIN MODAL ===== -->
+  <div class="login-modal" id="loginModal">
+    <div class="login-modal-content">
+      <h2>Welcome to My Work Place</h2>
+      <p>Please log in with your email.</p>
+      <input type="email" id="loginEmail" placeholder="Enter your email" required />
+      <button id="loginBtn">Login</button>
+    </div>
+  </div>
+  <!-- ======================== -->
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="header-content">
+      <h1>My Work Place</h1>
+      <button id="logoutBtn" class="logout-btn" style="display: none;">Logout</button>
+    </div>
+  </header>
+  <!-- ================== -->
+
+  <!-- ===== NAV / SETTINGS ===== -->
+  <nav class="settings-nav">
+    <div class="settings-item">
+      <label for="themeToggle">Light Mode</label>
+      <input type="checkbox" id="themeToggle" />
+    </div>
+  </nav>
+  <!-- =========================== -->
+
+  <!-- ===== MAIN CONTENT WRAPPER ===== -->
+  <main>
+    <!-- LEFT COLUMN: Timer / Some Info -->
+    <section class="left-column">
+      <div class="timer-box">
+        <h2>Timer</h2>
+        <div id="timerDisplay">00:00:00</div>
+        <div class="timer-controls">
+          <button id="startTimer">Start</button>
+          <button id="stopTimer">Stop</button>
+          <button id="resetTimer">Reset</button>
+        </div>
+      </div>
+
+      <div class="time-info-box">
+        <h3>Checklist Times</h3>
+        <ul id="timeList">
+          <!-- Example dynamic times for tasks -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- MIDDLE COLUMN: Task List / Checklists -->
+    <section class="middle-column">
+      <h2>Tasks</h2>
+      <div class="task-input">
+        <input type="text" id="newTaskInput" placeholder="Add a new task..." />
+        <button id="addTaskBtn">Add Task</button>
+      </div>
+      <ul id="taskList">
+        <!-- Tasks will appear here dynamically -->
+      </ul>
+
+      <hr/>
+
+      <h2>Checklists</h2>
+      <div class="checklist-input">
+        <input type="text" id="newChecklistInput" placeholder="Add a new checklist..." />
+        <button id="addChecklistBtn">Add Checklist</button>
+      </div>
+      <ul id="checklistContainer">
+        <!-- Checklists will appear here dynamically -->
+      </ul>
+    </section>
+
+    <!-- RIGHT COLUMN: Additional Panels (Calendar, Stats, etc.) -->
+    <section class="right-column">
+      <div class="stats-box">
+        <h3>Stats</h3>
+        <p id="taskCount">Tasks: 0</p>
+        <p id="checklistCount">Checklists: 0</p>
+      </div>
+
+      <div class="calendar-box">
+        <h3>Calendar</h3>
+        <!-- You can embed a simple calendar or an external widget -->
+        <p>Coming Soon!</p>
+      </div>
+
+      <div class="notes-box">
+        <h3>Notes</h3>
+        <textarea id="notesArea" placeholder="Write your notes here..."></textarea>
+      </div>
+    </section>
+  </main>
+  <!-- =============================== -->
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>Created by <strong>Your Name</strong> | <a href="mailto:[email protected]">[email protected]</a> | 
+      <a href="https://www.linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a>
+    </p>
+    <p>&copy; 2025 My Work Place</p>
+  </footer>
+  <!-- =================== -->
+
+  <!-- ===== BACKGROUND ELEMENTS (for forest + fireflies) ===== -->
+  <div class="background-wrap">
+    <!-- Example background image or color gradient -->
+    <div class="forest-background"></div>
+    <!-- Firefly container -->
+    <div class="firefly-container">
+      <!-- We can clone multiple .firefly elements to create an animated effect -->
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <!-- Add as many as you like or generate them with JS -->
+    </div>
+  </div>
+  <!-- ======================================================== -->
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
